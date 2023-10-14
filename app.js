@@ -1,3 +1,4 @@
+// Import required dependencies
 const express = require("express");
 require("dotenv").config();
 var cookieParser = require("cookie-parser");
@@ -16,6 +17,7 @@ app.use(cookieParser());
 var userRouter = require("./routes/user");
 var chatRouter = require("./routes/chat");
 
+// Configure CORS middleware based on allowed origins
 app.use((req, res, next) => {
   const allowedOriginsWithCredentials = [
     "http://localhost:5173",
